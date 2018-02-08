@@ -1,0 +1,27 @@
+
+juvb12: version 1.34:9/22/17 (contact mcgrath@cadence.com for help or feedback)
+
+USAGE: perl juvb.pl -help (print this message)
+
+NOTE : default version of uvm is CDNS-1.2 if [-uvm | -uvmhome] NOT specified
+
+       perl juvb.pl [-template | -tem | -tpl ] template_name [ args ]
+       template file args
+         ovc_name -> name of ovc (i.e. ahb_master)
+         ovc_item -> name of sequence item (i.e mstr_pkt)
+         ovc_var  -> list of sequence_item variables
+                      see example templates for more info
+                      support is limited, but gives a good starting point for the sequence_item field macro
+         ovc_if   -> name ofinterface (i.e. mstr_if)
+         ovc_port -> list of ports in interface
+
+         [ args ] 
+         -use_seqr  : use explicit sequencer vs. parameterized uvm_sequencer 
+         -one_file  : generate simplified uvc in one file - for examples and debug 
+         -test_only : simplified version of -one_file with only a test class 
+         -uvmhome   : CDNS-1.2 (default) | CDNS-1.1d | \$UVMHOME (user must set env var) 
+         -uvm       : use default version of UVM supplied with Incisive or Xcelium 
+         -xrun      : use Xcelium run command [xrun] (default Incisive run command [irun]) 
+
+add "timeunit" and "timeprecision" to template file if needed in package file (if *W,TSNSPK warning emitted) 
+

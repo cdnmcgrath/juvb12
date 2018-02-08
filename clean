@@ -1,0 +1,6 @@
+
+set -x
+rm -rf otest
+rm -rf mtest
+#rm -f all.log
+
